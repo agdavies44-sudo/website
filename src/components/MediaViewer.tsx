@@ -27,26 +27,50 @@ export default function MediaViewer({ item, onClose }: Props) {
       </button>
 
       <div className="grid flex-1 place-items-center">
-        {item.kind === "youtube" && item.youtubeId ? (
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0`}
-            title={item.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
+        {item.videoSrc ? (
+          <video
+            src={item.videoSrc}
+            poster={item.poster}
+            controls
+            autoPlay
+            playsInline
             className={
               portrait
-                ? "h-[min(76vh,760px)] w-[min(430px,78vw)] border-0 bg-black"
-                : "h-[min(76vh,698px)] w-[min(88vw,1240px)] border-0 bg-black"
+                ? "max-h-[76vh] w-[min(430px,78vw)] bg-black object-contain"
+                : "max-h-[76vh] max-w-[min(88vw,1240px)] bg-black object-contain"
             }
           />
+        ) : item.kind === "youtube" && item.youtubeId ? (
+          <div
+            className={
+              portrait
+                ? "relative h-[min(76vh,760px)] w-[min(430px,78vw)] overflow-hidden bg-black"
+                : "relative h-[min(76vh,698px)] w-[min(88vw,1240px)] overflow-hidden bg-black"
+            }
+          >
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1`}
+              title={item.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute left-0 top-[-10%] h-[120%] w-full border-0"
+            />
+          </div>
         ) : item.kind === "instagram" ? (
-          <div className="flex max-w-md flex-col items-center gap-6 text-center">
-            <p className="text-lg">This piece lives on Instagram.</p>
+          <div className="flex w-full max-w-[min(480px,92vw)] flex-col items-center gap-4">
+            <iframe
+              src={`${item.url.replace(/\/?$/, "/")}embed/captioned/`}
+              title={item.title}
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              loading="lazy"
+              className="h-[min(78vh,760px)] w-full border-0 bg-black"
+            />
             <a
               href={item.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white px-6 py-3 text-sm uppercase tracking-wider hover:bg-white hover:text-ink"
+              className="text-xs uppercase tracking-wider text-[#bcbcbc] underline-offset-2 hover:text-white hover:underline"
             >
               Open on Instagram ↗
             </a>

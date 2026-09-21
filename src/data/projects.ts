@@ -19,13 +19,45 @@ export type CarouselSection = {
   items: WorkItem[];
 };
 
+/** Unlisted / @davies.alexandra portfolio uploads hosted locally for clean HTML5 playback */
+const LOCAL_YT = new Set([
+  "1nFfoj0aZgw",
+  "46-0H0KQPLg",
+  "5RmVsiePsII",
+  "5YQCAJnYLzk",
+  "9TCi5HsuUJ8",
+  "Dv8yn-BHGGk",
+  "ExfVTBCSIZg",
+  "IC-LhuzDrjk",
+  "PkWmZVphFQs",
+  "RaLuIC3Qcag",
+  "TFrwlGIHLfI",
+  "WtveWDLhJ0Y",
+  "XrDDNarmJ0M",
+  "_4YwKbZqako",
+  "bCHP3dBWUew",
+  "f9O46xz4MDE",
+  "l8sfb1Henmg",
+  "mO8JyfzeT-s",
+  "mTb3NOj8QcQ",
+  "rQnwyMlZ3r0",
+  "rnrffy_E3U0",
+  "sZvf3_eF2Kg",
+  "tH2jxV5vetY",
+  "thC5ePQJ7CE",
+  "tkHTbjjOg4U",
+  "yrAIbY1d-po",
+]);
+
 function yt(
   id: string,
   brand: string,
   title: string,
   aspect: "portrait" | "landscape" = "landscape",
   poster?: string,
+  videoSrc?: string,
 ): WorkItem {
+  const local = videoSrc ?? (LOCAL_YT.has(id) ? asset(`/media/yt/${id}.mp4`) : undefined);
   return {
     id: `yt-${id}`,
     brand,
@@ -34,6 +66,7 @@ function yt(
     url: `https://www.youtube.com/watch?v=${id}`,
     youtubeId: id,
     poster: poster ?? `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
+    videoSrc: local,
     aspect,
   };
 }
