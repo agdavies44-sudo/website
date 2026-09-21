@@ -138,21 +138,14 @@ export const socialVideos: WorkItem[] = [
 /** Corporate — landscape carousel (playable YouTube first) */
 export const corporate: WorkItem[] = [
   yt("ExfVTBCSIZg", "Core Productions", "Core Productions — Partnership highlight", "landscape", asset("/media/corporate/core-agency-sizzle.jpg")),
-  yt("thC5ePQJ7CE", "Core Productions", "Core Productions — Founders pitching investors", "landscape"),
   yt("4dr2xTe6-QA", "PensionBee", "PensionBee — James’s Story", "landscape"),
-  yt("TQT7WDvhB6c", "PensionBee", "PensionBee — Sarah’s Story", "landscape"),
-  yt("Zt9eCXeBx34", "PensionBee", "PensionBee — Becca’s Story", "landscape"),
   yt("IC-LhuzDrjk", "Missoni", "Missoni — Moonstone Interiors", "landscape", asset("/media/corporate/missoni-16x9.jpg")),
   yt("RaLuIC3Qcag", "Buy Association", "Buy Association — Property Ad", "landscape", asset("/media/corporate/buy-association-16x9.jpg")),
-  yt("_4YwKbZqako", "Buy Association", "Buy Association — Fountain Court", "landscape"),
   yt("rnrffy_E3U0", "Fincar", "Fincar", "landscape", asset("/media/corporate/fincar-16x9.jpg")),
   yt("bCHP3dBWUew", "Rothmore", "Rothmore — Tobacco Warehouse", "landscape", asset("/media/corporate/rothmore-tobacco-warehouse.jpg")),
   yt("5RmVsiePsII", "Waterhouse Gardens", "Waterhouse Gardens", "landscape", asset("/media/corporate/waterhouse-gardens.jpg")),
   yt("5YQCAJnYLzk", "5DB Media", "5DB — Full interview", "landscape"),
-  yt("Dv8yn-BHGGk", "5DB Media", "5DB — Artists in Residence band intro", "landscape"),
   yt("rQnwyMlZ3r0", "Look Optic", "Look Optic — Creator edit", "portrait"),
-  yt("mTb3NOj8QcQ", "Look Optic", "Look Optic — Creator edit two", "portrait"),
-  yt("9TCi5HsuUJ8", "Look Optic", "Look Optic — Model film", "portrait"),
   yt("tkHTbjjOg4U", "Creative Image", "Creative Image Productions — Wedding edit", "landscape"),
   // Still / site-only pieces (no playable file yet — shown after videos)
   yt("qvnz76sRMrA", "Stanley’s Stick", "Stanley’s Stick — Portfolio Excerpt", "landscape", asset("/media/corporate/stanleys-stick-preview.jpg")),
@@ -177,10 +170,18 @@ export const corporate: WorkItem[] = [
     asset("/media/corporate/the-one-residence.jpg"),
     "landscape",
   ),
+  yt("thC5ePQJ7CE", "Core Productions", "Core Productions — Founders pitching investors", "landscape"),
+  yt("TQT7WDvhB6c", "PensionBee", "PensionBee — Sarah’s Story", "landscape"),
+  yt("_4YwKbZqako", "Buy Association", "Buy Association — Fountain Court", "landscape"),
+  yt("Dv8yn-BHGGk", "5DB Media", "5DB — Artists in Residence band intro", "landscape"),
+  yt("mTb3NOj8QcQ", "Look Optic", "Look Optic — Creator edit two", "portrait"),
+  yt("Zt9eCXeBx34", "PensionBee", "PensionBee — Becca’s Story", "landscape"),
+  yt("9TCi5HsuUJ8", "Look Optic", "Look Optic — Model film", "portrait"),
 ];
 
 /** Podcasts */
 export const podcasts: WorkItem[] = [
+  yt("1WHRf51uFrA", "Lunch With…", "Lunch With… Ballin’ Jacks", "landscape"),
   local(
     "pod-eitik",
     "EITIK",
@@ -188,7 +189,6 @@ export const podcasts: WorkItem[] = [
     asset("/media/podcasts/eitik-episode-1-preview.jpg"),
     "landscape",
   ),
-  yt("1WHRf51uFrA", "Lunch With…", "Lunch With… Ballin’ Jacks", "landscape"),
   yt("9Khabl3tBVM", "Lunch With…", "Lunch With… Stepbrother", "landscape"),
   yt("iorwk_22ync", "Lunch With…", "Lunch With… Us", "landscape"),
 ];
