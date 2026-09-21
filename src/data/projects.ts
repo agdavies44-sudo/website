@@ -1,3 +1,4 @@
+import { asset } from "@/lib/asset";
 export type MediaKind = "youtube" | "instagram" | "image" | "external";
 
 export type WorkItem = {
@@ -8,6 +9,7 @@ export type WorkItem = {
   url: string;
   youtubeId?: string;
   poster?: string;
+  videoSrc?: string;
   aspect: "portrait" | "landscape";
 };
 
@@ -41,6 +43,7 @@ function ig(
   brand: string,
   title: string,
   kind: "reel" | "p" = "reel",
+  poster?: string,
 ): WorkItem {
   return {
     id: `ig-${code}`,
@@ -48,7 +51,8 @@ function ig(
     title,
     kind: "instagram",
     url: `https://www.instagram.com/${kind}/${code}/`,
-    poster: undefined,
+    poster: poster ?? asset(`/media/social/ig/${code}.jpg`),
+    videoSrc: asset(`/media/social/ig/${code}.mp4`),
     aspect: "portrait",
   };
 }
@@ -74,23 +78,23 @@ function local(
 
 /** Social videos — portrait carousel (SPEC titles + BRIEF links) */
 export const socialVideos: WorkItem[] = [
-  yt("l8sfb1Henmg", "W Hotels", "W Hotel Manchester Event Recap", "portrait", "/media/social/w-hotel-manchester.jpg"),
+  yt("l8sfb1Henmg", "W Hotels", "W Hotel Manchester Event Recap", "portrait", asset("/media/social/w-hotel-manchester.jpg")),
   ig("Db73O9yK4Rx", "Borough Market", "Borough Market reel"),
-  yt("IC-LhuzDrjk", "Missoni", "Moonstone Interiors by Missoni", "portrait", "/media/social/missoni.jpg"),
+  yt("IC-LhuzDrjk", "Missoni", "Moonstone Interiors by Missoni", "portrait", asset("/media/social/missoni.jpg")),
   ig("C0epaNJtyk2", "5DB Media", "5DB Media", "p"),
-  yt("mO8JyfzeT-s", "Liquid Opulence", "Liquid Opulence — Three Reasons", "portrait", "/media/social/liquid-opulence.jpg"),
+  yt("mO8JyfzeT-s", "Liquid Opulence", "Liquid Opulence — Three Reasons", "portrait", asset("/media/social/liquid-opulence.jpg")),
   ig("Dbu-vcZs6Jv", "Borough Market", "Borough Market reel 2"),
-  local("social-focaccia", "5DB Media", "5DB Canteen — Focaccia", "/media/social/focaccia.jpg", "portrait"),
+  local("social-focaccia", "5DB Media", "5DB Canteen — Focaccia", asset("/media/social/focaccia.jpg"), "portrait"),
   ig("DakQSTJI3lm", "Lunch With…", "Lunch With… Instagram"),
-  yt("f9O46xz4MDE", "Made For Grownups", "Made For Grownups", "portrait", "/media/social/made-for-grownups.jpg"),
+  yt("f9O46xz4MDE", "Made For Grownups", "Made For Grownups", "portrait", asset("/media/social/made-for-grownups.jpg")),
   ig("DbsZUhGMngR", "Borough Market", "Borough Market reel 3"),
-  yt("_4YwKbZqako", "Buy Association", "Buy Association — Fountain Court", "portrait", "/media/social/buy-association.jpg"),
-  local("social-bread", "5DB Media", "5DB Canteen — Bread teaser", "/media/social/bread-teaser.jpg", "portrait"),
-  yt("WtveWDLhJ0Y", "Cinnabons", "Cinnabon teaser", "portrait", "/media/social/cinnabon-teaser.jpg"),
-  yt("XrDDNarmJ0M", "The Silk Yard", "The Silk Yard Property Ad", "portrait", "/media/social/silk-yard.jpg"),
-  yt("sZvf3_eF2Kg", "Snap Cookies", "Snap cookies", "portrait", "/media/social/snap-cookies.jpg"),
-  yt("rnrffy_E3U0", "Fincar", "Fincar Ad", "portrait", "/media/social/fincar.jpg"),
-  yt("tH2jxV5vetY", "Harp Song", "Harp Song", "portrait", "/media/social/harp-song.jpg"),
+  yt("_4YwKbZqako", "Buy Association", "Buy Association — Fountain Court", "portrait", asset("/media/social/buy-association.jpg")),
+  local("social-bread", "5DB Media", "5DB Canteen — Bread teaser", asset("/media/social/bread-teaser.jpg"), "portrait"),
+  yt("WtveWDLhJ0Y", "Cinnabons", "Cinnabon teaser", "portrait", asset("/media/social/cinnabon-teaser.jpg")),
+  yt("XrDDNarmJ0M", "The Silk Yard", "The Silk Yard Property Ad", "portrait", asset("/media/social/silk-yard.jpg")),
+  yt("sZvf3_eF2Kg", "Snap Cookies", "Snap cookies", "portrait", asset("/media/social/snap-cookies.jpg")),
+  yt("rnrffy_E3U0", "Fincar", "Fincar Ad", "portrait", asset("/media/social/fincar.jpg")),
+  yt("tH2jxV5vetY", "Harp Song", "Harp Song", "portrait", asset("/media/social/harp-song.jpg")),
   yt("PkWmZVphFQs", "5DB Media", "5DB — Band performance teaser", "portrait"),
   yt("yrAIbY1d-po", "5DB Media", "5DB — Band on Tour", "portrait"),
   yt("TFrwlGIHLfI", "5DB Media", "5DB — Meet the team", "portrait"),
@@ -98,86 +102,48 @@ export const socialVideos: WorkItem[] = [
   yt("1nFfoj0aZgw", "5DB Media", "5DB — Interview cutdown", "portrait"),
 ];
 
-/** Corporate — landscape carousel */
+/** Corporate — landscape carousel (playable YouTube first) */
 export const corporate: WorkItem[] = [
-  local(
-    "corp-core",
-    "Core Productions",
-    "Core Productions — Home Page Sizzle",
-    "/media/corporate/core-agency-sizzle.jpg",
-    "landscape",
-    "https://www.coreagency.uk",
-  ),
-  local(
-    "corp-stanley",
-    "Stanley’s Stick",
-    "Stanley’s Stick — Portfolio Excerpt",
-    "/media/corporate/stanleys-stick-preview.jpg",
-    "landscape",
-  ),
+  yt("ExfVTBCSIZg", "Core Productions", "Core Productions — Partnership highlight", "landscape", asset("/media/corporate/core-agency-sizzle.jpg")),
+  yt("thC5ePQJ7CE", "Core Productions", "Core Productions — Founders pitching investors", "landscape"),
   yt("4dr2xTe6-QA", "PensionBee", "PensionBee — James’s Story", "landscape"),
+  yt("TQT7WDvhB6c", "PensionBee", "PensionBee — Sarah’s Story", "landscape"),
+  yt("Zt9eCXeBx34", "PensionBee", "PensionBee — Becca’s Story", "landscape"),
+  yt("IC-LhuzDrjk", "Missoni", "Missoni — Moonstone Interiors", "landscape", asset("/media/corporate/missoni-16x9.jpg")),
+  yt("RaLuIC3Qcag", "Buy Association", "Buy Association — Property Ad", "landscape", asset("/media/corporate/buy-association-16x9.jpg")),
+  yt("_4YwKbZqako", "Buy Association", "Buy Association — Fountain Court", "landscape"),
+  yt("rnrffy_E3U0", "Fincar", "Fincar", "landscape", asset("/media/corporate/fincar-16x9.jpg")),
+  yt("bCHP3dBWUew", "Rothmore", "Rothmore — Tobacco Warehouse", "landscape", asset("/media/corporate/rothmore-tobacco-warehouse.jpg")),
+  yt("5RmVsiePsII", "Waterhouse Gardens", "Waterhouse Gardens", "landscape", asset("/media/corporate/waterhouse-gardens.jpg")),
+  yt("5YQCAJnYLzk", "5DB Media", "5DB — Full interview", "landscape"),
+  yt("Dv8yn-BHGGk", "5DB Media", "5DB — Artists in Residence band intro", "landscape"),
+  yt("rQnwyMlZ3r0", "Look Optic", "Look Optic — Creator edit", "portrait"),
+  yt("mTb3NOj8QcQ", "Look Optic", "Look Optic — Creator edit two", "portrait"),
+  yt("9TCi5HsuUJ8", "Look Optic", "Look Optic — Model film", "portrait"),
+  yt("tkHTbjjOg4U", "Creative Image", "Creative Image Productions — Wedding edit", "landscape"),
+  // Still / site-only pieces (no playable file yet — shown after videos)
+  yt("qvnz76sRMrA", "Stanley’s Stick", "Stanley’s Stick — Portfolio Excerpt", "landscape", asset("/media/corporate/stanleys-stick-preview.jpg")),
   local(
     "corp-honor",
     "Honor Oak",
     "Honor Oak",
-    "/media/corporate/honor-oak.jpg",
-    "landscape",
-  ),
-  local(
-    "corp-missoni",
-    "Missoni",
-    "Missoni",
-    "/media/corporate/missoni-16x9.jpg",
-    "landscape",
-  ),
-  yt("TQT7WDvhB6c", "PensionBee", "PensionBee — Sarah’s Story", "landscape"),
-  local(
-    "corp-buy",
-    "Buy Association",
-    "Buy Association — Fountain Court",
-    "/media/corporate/buy-association-16x9.jpg",
+    asset("/media/corporate/honor-oak.jpg"),
     "landscape",
   ),
   local(
     "corp-monta",
     "Monta Capital",
     "Monta Capital",
-    "/media/corporate/monta-capital.jpg",
-    "landscape",
-  ),
-  yt("Zt9eCXeBx34", "Corporate Film", "Corporate Film", "landscape"),
-  local(
-    "corp-fincar",
-    "Fincar",
-    "Fincar",
-    "/media/corporate/fincar-16x9.jpg",
-    "landscape",
-  ),
-  local(
-    "corp-rothmore",
-    "Rothmore",
-    "Rothmore — Tobacco Warehouse",
-    "/media/corporate/rothmore-tobacco-warehouse.jpg",
+    asset("/media/corporate/monta-capital.jpg"),
     "landscape",
   ),
   local(
     "corp-one",
     "The One Residence",
     "The One Residence",
-    "/media/corporate/the-one-residence.jpg",
+    asset("/media/corporate/the-one-residence.jpg"),
     "landscape",
   ),
-  yt("5RmVsiePsII", "Waterhouse Gardens", "Waterhouse Gardens", "landscape", "/media/corporate/waterhouse-gardens.jpg"),
-  yt("ExfVTBCSIZg", "Core Productions", "Core Productions — Partnership highlight", "landscape"),
-  yt("thC5ePQJ7CE", "Core Productions", "Core Productions — Founders pitching investors", "landscape"),
-  yt("5YQCAJnYLzk", "5DB Media", "5DB — Full interview", "landscape"),
-  yt("Dv8yn-BHGGk", "5DB Media", "5DB — Artists in Residence band intro", "landscape"),
-  yt("bCHP3dBWUew", "Rothmore", "Rothmore Property Ad", "landscape"),
-  yt("RaLuIC3Qcag", "Buy Association", "Buy Association Property Ad", "landscape"),
-  yt("rQnwyMlZ3r0", "Look Optic", "Look Optic — Creator edit", "portrait"),
-  yt("mTb3NOj8QcQ", "Look Optic", "Look Optic — Creator edit two", "portrait"),
-  yt("9TCi5HsuUJ8", "Look Optic", "Look Optic — Model film", "portrait"),
-  yt("tkHTbjjOg4U", "Creative Image", "Creative Image Productions — Wedding edit", "landscape"),
 ];
 
 /** Podcasts */
@@ -186,7 +152,7 @@ export const podcasts: WorkItem[] = [
     "pod-eitik",
     "EITIK",
     "EITIK Podcast — Episode 1",
-    "/media/podcasts/eitik-episode-1-preview.jpg",
+    asset("/media/podcasts/eitik-episode-1-preview.jpg"),
     "landscape",
   ),
   yt("1WHRf51uFrA", "Lunch With…", "Lunch With… Ballin’ Jacks", "landscape"),
@@ -203,8 +169,8 @@ export const lives: WorkItem[] = [
 ];
 
 export const workSections: CarouselSection[] = [
-  { id: "social", heading: "Social videos", items: socialVideos },
+  { id: "social", heading: "Social", items: socialVideos },
   { id: "corporate", heading: "Corporate", items: corporate },
-  { id: "podcasts", heading: "Podcasts", items: podcasts },
+  { id: "podcasts", heading: "Podcast", items: podcasts },
   { id: "lives", heading: "Live productions", items: lives },
 ];
