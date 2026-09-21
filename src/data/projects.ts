@@ -111,7 +111,7 @@ function local(
 
 /** Social videos — portrait carousel (SPEC titles + BRIEF links) */
 export const socialVideos: WorkItem[] = [
-  // Visual impact first; Look Optic portraits near front; brands spread
+  // Visual impact first; Look Optic near front; 5DB/Borough spread (no Corporate leftovers)
   yt("IC-LhuzDrjk", "Missoni", "Moonstone Interiors by Missoni", "portrait", asset("/media/social/missoni.jpg")),
   yt("rQnwyMlZ3r0", "Look Optic", "Look Optic — Creator edit", "portrait"),
   yt("f9O46xz4MDE", "Made For Grownups", "Made For Grownups", "portrait", asset("/media/social/made-for-grownups.jpg")),
@@ -127,12 +127,14 @@ export const socialVideos: WorkItem[] = [
   yt("WtveWDLhJ0Y", "Cinnabons", "Cinnabon teaser", "portrait", asset("/media/social/cinnabon-teaser.jpg")),
   yt("PkWmZVphFQs", "5DB Media", "5DB — Band performance teaser", "portrait"),
   ig("Dbu-vcZs6Jv", "Borough Market", "Borough Market reel 2"),
+  yt("Dv8yn-BHGGk", "5DB Media", "5DB — Artists in Residence band intro", "portrait"),
   yt("tH2jxV5vetY", "Harp Song", "Harp Song", "portrait", asset("/media/social/harp-song.jpg")),
   ig("DakQSTJI3lm", "Lunch With…", "Lunch With… Instagram"),
   yt("_4YwKbZqako", "Buy Association", "Buy Association — Fountain Court", "portrait", asset("/media/social/buy-association.jpg")),
   local("social-bread", "5DB Media", "5DB Canteen — Bread teaser", asset("/media/social/bread-teaser.jpg"), "portrait"),
   ig("DbsZUhGMngR", "Borough Market", "Borough Market reel 3"),
   yt("yrAIbY1d-po", "5DB Media", "5DB — Band on Tour", "portrait"),
+  yt("5YQCAJnYLzk", "5DB Media", "5DB — Full interview", "portrait"),
   ig("C0epaNJtyk2", "5DB Media", "5DB Media", "p"),
   yt("TFrwlGIHLfI", "5DB Media", "5DB — Meet the team", "portrait"),
   yt("46-0H0KQPLg", "5DB Media", "5DB — Gig round-up", "portrait"),
@@ -141,7 +143,7 @@ export const socialVideos: WorkItem[] = [
 
 /** Corporate — landscape carousel (playable YouTube first) */
 export const corporate: WorkItem[] = [
-  // Visual impact first; still-only cards toward the end; brands spread
+  // Visual impact first; still-only cards toward the end; brand films and property first
   yt("IC-LhuzDrjk", "Missoni", "Missoni — Moonstone Interiors", "landscape", asset("/media/corporate/missoni-16x9.jpg")),
   yt("rnrffy_E3U0", "Fincar", "Fincar", "landscape", asset("/media/corporate/fincar-16x9.jpg")),
   yt("ExfVTBCSIZg", "Core Productions", "Core Productions — Partnership highlight", "landscape", asset("/media/corporate/core-agency-sizzle.jpg")),
@@ -152,10 +154,8 @@ export const corporate: WorkItem[] = [
   yt("thC5ePQJ7CE", "Core Productions", "Core Productions — Founders pitching investors", "landscape"),
   yt("4dr2xTe6-QA", "PensionBee", "PensionBee — James’s Story", "landscape"),
   yt("qvnz76sRMrA", "Stanley’s Stick", "Stanley’s Stick — Portfolio Excerpt", "landscape", asset("/media/corporate/stanleys-stick-preview.jpg")),
-  yt("5YQCAJnYLzk", "5DB Media", "5DB — Full interview", "landscape"),
   yt("TQT7WDvhB6c", "PensionBee", "PensionBee — Sarah’s Story", "landscape"),
   yt("_4YwKbZqako", "Buy Association", "Buy Association — Fountain Court", "landscape"),
-  yt("Dv8yn-BHGGk", "5DB Media", "5DB — Artists in Residence band intro", "landscape"),
   yt("Zt9eCXeBx34", "PensionBee", "PensionBee — Becca’s Story", "landscape"),
   local(
       "corp-one",
