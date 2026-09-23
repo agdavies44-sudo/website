@@ -29,10 +29,10 @@ export default function WorkCard({ item }: Props) {
       requestAnimationFrame(() => {
         const v = videoRef.current;
         if (!v) return;
-        v.muted = false;
+        // Quiet by default (~20%); keep muted first so inline play stays seamless
+        v.volume = 0.2;
+        v.muted = true;
         void v.play().catch(() => {
-          // Autoplay with sound can fail; retry muted then unmute on tap
-          v.muted = true;
           void v.play();
         });
       });
@@ -59,6 +59,10 @@ export default function WorkCard({ item }: Props) {
           playsInline
           preload="auto"
           autoPlay
+          muted
+          onLoadedMetadata={(e) => {
+            e.currentTarget.volume = 0.2;
+          }}
         />
       </article>
     );
@@ -66,7 +70,7 @@ export default function WorkCard({ item }: Props) {
 
   if (playing && item.kind === "youtube" && item.youtubeId) {
     const embedParams =
-      "autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1";
+      "autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1";
     return (
       <article
         className={`relative shrink-0 snap-start overflow-hidden bg-black ${shell}`}

@@ -34,6 +34,10 @@ export default function MediaViewer({ item, onClose }: Props) {
             controls
             autoPlay
             playsInline
+            muted
+            onLoadedMetadata={(e) => {
+              e.currentTarget.volume = 0.2;
+            }}
             className={
               portrait
                 ? "max-h-[76vh] w-[min(430px,78vw)] bg-black object-contain"
@@ -49,7 +53,7 @@ export default function MediaViewer({ item, onClose }: Props) {
             }
           >
             <iframe
-              src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1`}
+              src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1`}
               title={item.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen

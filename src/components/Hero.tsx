@@ -9,6 +9,9 @@ import { asset } from "@/lib/asset";
  * opaque MP4 black when mix-blend-screen is used on <video>).
  * MP4 keeps mix-blend-screen + isolation as a fallback path.
  */
+/** Cache-bust signature assets so Safari/CDN drop the flecky WebM/PNG. */
+const SIG_V = "20260923b";
+
 export default function Hero() {
   const [preferBlend, setPreferBlend] = useState(false);
   const [showStatic, setShowStatic] = useState(false);
@@ -50,13 +53,13 @@ export default function Hero() {
           loop
           playsInline
           preload="auto"
-          poster={asset("/media/hero-signature.png")}
+          poster={`${asset("/media/hero-signature.png")}?v=${SIG_V}`}
           aria-label="Alexandra Davies signature animation"
           onError={() => setShowStatic(true)}
         >
           {/* Alpha WebM first — no blend needed */}
           <source
-            src={asset("/media/hero-signature.webm")}
+            src={`${asset("/media/hero-signature.webm")}?v=${SIG_V}`}
             type='video/webm; codecs="vp9"'
           />
           {/* Opaque MP4 fallback — screen blend knocks out black */}
@@ -65,7 +68,7 @@ export default function Hero() {
       ) : (
         /* eslint-disable-next-line @next/next/no-img-element */
         <img
-          src={asset("/media/hero-signature.png")}
+          src={`${asset("/media/hero-signature.png")}?v=${SIG_V}`}
           alt=""
           className="absolute inset-0 z-[1] h-full w-full scale-[1.002] object-cover object-center"
           decoding="async"
