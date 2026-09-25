@@ -6,6 +6,10 @@ import { useModals } from "./ModalProvider";
 
 type Props = { item: WorkItem };
 
+function vimeoEmbedSrc(id: string) {
+  return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&title=0&byline=0&portrait=0&playsinline=1`;
+}
+
 export default function WorkCard({ item }: Props) {
   const { openViewer } = useModals();
   const [playing, setPlaying] = useState(false);
@@ -13,9 +17,12 @@ export default function WorkCard({ item }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const portrait = item.aspect === "portrait";
 
+  // Fixed card shells for carousel rhythm; media uses contain so native
+  // aspect ratios letterbox/pillarbox instead of crop-in.
+  // Social = portrait 9:16; Corporate/Podcast/Lives = landscape 16:9.
   const shell = portrait
     ? "aspect-[9/16] basis-[clamp(180px,18.5vw,285px)] max-[700px]:basis-[min(62vw,250px)]"
-    : "aspect-[16/10] basis-[clamp(320px,38vw,610px)] max-[700px]:basis-[min(86vw,520px)]";
+    : "aspect-video basis-[clamp(320px,38vw,610px)] max-[700px]:basis-[min(86vw,520px)]";
 
   const warm = () => {
     if (!item.videoSrc || warmed) return;
@@ -38,6 +45,10 @@ export default function WorkCard({ item }: Props) {
       });
       return;
     }
+    if (item.kind === "vimeo" && item.vimeoId) {
+      setPlaying(true);
+      return;
+    }
     if (item.kind === "youtube" && item.youtubeId) {
       setPlaying(true);
       return;
@@ -52,7 +63,7 @@ export default function WorkCard({ item }: Props) {
       >
         <video
           ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-contain object-center"
           src={item.videoSrc}
           poster={item.poster}
           controls
@@ -68,6 +79,22 @@ export default function WorkCard({ item }: Props) {
     );
   }
 
+  if (playing && item.kind === "vimeo" && item.vimeoId) {
+    return (
+      <article
+        className={`relative shrink-0 snap-start overflow-hidden bg-black ${shell}`}
+      >
+        <iframe
+          src={vimeoEmbedSrc(item.vimeoId)}
+          title={item.title}
+          allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+          allowFullScreen
+          className="absolute inset-0 h-full w-full border-0"
+        />
+      </article>
+    );
+  }
+
   if (playing && item.kind === "youtube" && item.youtubeId) {
     const embedParams =
       "autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1";
@@ -75,16 +102,13 @@ export default function WorkCard({ item }: Props) {
       <article
         className={`relative shrink-0 snap-start overflow-hidden bg-black ${shell}`}
       >
-        {/* Slight vertical overscan hides YouTube title/channel chrome without nuking controls */}
-        <div className="absolute inset-0 overflow-hidden">
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?${embedParams}`}
-            title={item.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            className="absolute left-0 top-[-10%] h-[120%] w-full border-0"
-          />
-        </div>
+        <iframe
+          src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?${embedParams}`}
+          title={item.title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+          className="absolute inset-0 h-full w-full border-0"
+        />
       </article>
     );
   }
@@ -100,7 +124,7 @@ export default function WorkCard({ item }: Props) {
         <img
           src={item.poster}
           alt=""
-          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          className="absolute inset-0 h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
           loading="lazy"
         />
       ) : (

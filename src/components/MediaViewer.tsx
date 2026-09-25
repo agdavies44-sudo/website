@@ -7,8 +7,16 @@ type Props = {
   onClose: () => void;
 };
 
+function vimeoEmbedSrc(id: string) {
+  return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&title=0&byline=0&portrait=0&playsinline=1`;
+}
+
 export default function MediaViewer({ item, onClose }: Props) {
   const portrait = item.aspect === "portrait";
+
+  const frameClass = portrait
+    ? "relative aspect-[9/16] h-auto max-h-[76vh] w-[min(430px,78vw)] overflow-hidden bg-black"
+    : "relative aspect-video h-auto max-h-[76vh] w-[min(88vw,1240px)] overflow-hidden bg-black";
 
   return (
     <div
@@ -44,20 +52,24 @@ export default function MediaViewer({ item, onClose }: Props) {
                 : "max-h-[76vh] max-w-[min(88vw,1240px)] bg-black object-contain"
             }
           />
+        ) : item.kind === "vimeo" && item.vimeoId ? (
+          <div className={frameClass}>
+            <iframe
+              src={vimeoEmbedSrc(item.vimeoId)}
+              title={item.title}
+              allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full border-0"
+            />
+          </div>
         ) : item.kind === "youtube" && item.youtubeId ? (
-          <div
-            className={
-              portrait
-                ? "relative h-[min(76vh,760px)] w-[min(430px,78vw)] overflow-hidden bg-black"
-                : "relative h-[min(76vh,698px)] w-[min(88vw,1240px)] overflow-hidden bg-black"
-            }
-          >
+          <div className={frameClass}>
             <iframe
               src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1`}
               title={item.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
-              className="absolute left-0 top-[-10%] h-[120%] w-full border-0"
+              className="absolute inset-0 h-full w-full border-0"
             />
           </div>
         ) : item.kind === "instagram" ? (
