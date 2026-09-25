@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edit guide — move &amp; type</title>
+  <style>
+    :root { --ink:#111; --paper:#f4f4f2; --gold:#ffd666; --gold-b:#e6b422; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; color:var(--ink); background:var(--paper); }
+    .banner {
+      position:sticky; top:0; z-index:100;
+      background:#111; color:#fff; padding:12px 2.35%;
+      display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+      font-size:0.88rem; line-height:1.35;
+    }
+    .banner strong { color:var(--gold); }
+    .banner .actions { display:flex; flex-wrap:wrap; gap:8px; }
+    .banner button {
+      border:1px solid #fff; background:transparent; color:#fff;
+      padding:8px 12px; font-size:0.7rem; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer;
+    }
+    .banner button.primary { background:var(--gold); color:#111; border-color:var(--gold); font-weight:700; }
+    .hint {
+      background:#fff8e1; border-bottom:1px solid #f0d78c;
+      padding:10px 2.35%; font-size:0.85rem; color:#444;
+    }
+    .stage-label {
+      font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:#886600;
+      padding:10px 2.35% 0;
+    }
+    .stage {
+      position:relative;
+      margin:8px 2.35% 28px;
+      background:#fff;
+      border:1px solid #ddd;
+      min-height:220px;
+      overflow:hidden;
+    }
+    .stage.hero-stage {
+      min-height:min(70vh, 640px);
+      background:#111;
+    }
+    .stage.hero-stage img {
+      position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 46%;
+      opacity:0.95; pointer-events:none;
+    }
+    .stage.dark { background:#111; color:#fff; min-height:360px; }
+    .box {
+      position:absolute;
+      min-width:120px; max-width:min(90%, 520px);
+      background:rgba(255,214,102,0.88);
+      border:2px solid var(--gold-b);
+      border-radius:4px;
+      box-shadow:0 4px 18px rgba(0,0,0,.12);
+      z-index:5;
+    }
+    .box.dark-text { color:#111; }
+    .box.on-dark {
+      background:rgba(255,214,102,0.92);
+      color:#111;
+    }
+    .box .handle {
+      display:flex; align-items:center; gap:8px;
+      padding:6px 8px; background:rgba(0,0,0,.12);
+      cursor:grab; user-select:none;
+      font-size:0.65rem; letter-spacing:0.08em; text-transform:uppercase; color:#664400;
+    }
+    .box .handle:active { cursor:grabbing; }
+    .box .handle .grip { font-size:1rem; line-height:1; }
+    .box .body {
+      padding:10px 12px;
+      outline:none;
+      cursor:text;
+      font-size:1rem; line-height:1.35;
+    }
+    .box.headline .body { font-size:clamp(1.6rem, 3.2vw, 2.8rem); line-height:1.05; letter-spacing:-0.03em; }
+    .box.button-box .body {
+      display:inline-block; background:#111; color:#fff;
+      padding:9px 16px; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase;
+    }
+    .box.nav .body { font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; }
+    .box.wordmark .body { font-family:Georgia, serif; font-style:italic; font-size:clamp(1.4rem,2.5vw,2.4rem); }
+    .box.contact-h .body { font-size:clamp(2rem,6vw,5rem); line-height:0.9; letter-spacing:-0.04em; }
+    .box.selected { border-color:#111; box-shadow:0 0 0 3px rgba(230,180,34,.55); }
+    .footer-note { padding:8px 2.35% 48px; font-size:0.85rem; color:#666; }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div>
+      <strong>EDIT GUIDE (move + type)</strong> —
+      Drag the <strong>dotted bar</strong> on top of a yellow box to move it.
+      Click inside the box to change the words.
+      Then <strong>Save &amp; download</strong> and send the file to Grok Bot.
+    </div>
+    <div class="actions">
+      <button type="button" class="primary" id="btn-save">Save &amp; download</button>
+      <button type="button" id="btn-reset">Reset layout</button>
+    </div>
+  </div>
+  <div class="hint">
+    Tip: grab the top strip (⋮⋮ Move), not the text, to drag. Typing still works after you click into the yellow area.
+    Image/video slots stay fixed — send new media files to Grok Bot separately.
+  </div>
+
+  <div class="stage-label">Header over hero</div>
+  <div class="stage hero-stage" id="stage-hero">
+    <img src="/media/hero-italy-104.jpg" alt="" onerror="this.src='http://alexandradavies.com/media/hero-italy-104.jpg'" />
+    <div class="box wordmark on-dark" data-id="header.name" style="left:2.5%; top:4%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move — name</div>
+      <div class="body" contenteditable="true">Alexandra Davies</div>
+    </div>
+    <div class="box nav on-dark" data-id="nav.phone" style="left:62%; top:5%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Phone</div>
+    </div>
+    <div class="box nav on-dark" data-id="nav.email" style="left:72%; top:5%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Email</div>
+    </div>
+    <div class="box nav on-dark" data-id="nav.work" style="left:82%; top:5%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Work</div>
+    </div>
+  </div>
+
+  <div class="stage-label">Intro row (headline / body / button)</div>
+  <div class="stage" id="stage-intro" style="min-height:280px;">
+    <div class="box headline dark-text" data-id="intro.headline" style="left:2.5%; top:18%; max-width:34%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move — headline</div>
+      <div class="body" contenteditable="true">Capture. Create.<br>Sell a story.</div>
+    </div>
+    <div class="box dark-text" data-id="intro.body" style="left:38%; top:28%; max-width:36%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move — body</div>
+      <div class="body" contenteditable="true">Happy to help, from conception to final cut.</div>
+    </div>
+    <div class="box button-box dark-text" data-id="intro.button" style="left:78%; top:32%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move — button</div>
+      <div class="body" contenteditable="true">Get in touch</div>
+    </div>
+  </div>
+
+  <div class="stage-label">Work section titles (drag where you want them)</div>
+  <div class="stage" id="stage-work" style="min-height:200px;">
+    <div class="box dark-text" data-id="work.social" style="left:3%; top:20%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Social</div>
+    </div>
+    <div class="box dark-text" data-id="work.corporate" style="left:28%; top:20%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Corporate</div>
+    </div>
+    <div class="box dark-text" data-id="work.podcast" style="left:55%; top:20%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Podcast</div>
+    </div>
+    <div class="box dark-text" data-id="work.photo" style="left:78%; top:20%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Photography</div>
+    </div>
+  </div>
+
+  <div class="stage-label">Contact block</div>
+  <div class="stage dark" id="stage-contact">
+    <div class="box on-dark" data-id="contact.eyebrow" style="left:3%; top:10%; max-width:50%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move — eyebrow</div>
+      <div class="body" contenteditable="true">Have a brief, a launch or the start of an idea?</div>
+    </div>
+    <div class="box contact-h on-dark" data-id="contact.headline" style="left:3%; top:28%; max-width:70%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move — headline</div>
+      <div class="body" contenteditable="true">Let’s make it worth watching.</div>
+    </div>
+    <div class="box on-dark" data-id="contact.cta1" style="left:3%; top:72%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Start a conversation ↗</div>
+    </div>
+    <div class="box on-dark" data-id="contact.cta2" style="left:70%; top:74%;">
+      <div class="handle"><span class="grip">⋮⋮</span> Move</div>
+      <div class="body" contenteditable="true">Get in touch</div>
+    </div>
+  </div>
+
+  
+  <div id="save-panel" hidden style="position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:20px;">
+    <div style="background:#fff;max-width:640px;width:100%;max-height:85vh;overflow:auto;padding:20px;border-radius:8px;">
+      <h2 style="margin:0 0 8px;font-size:1.2rem;">Your edits are ready</h2>
+      <p style="margin:0 0 12px;font-size:0.9rem;color:#444;">Download may be blocked by the browser. Use <strong>Copy</strong>, then paste into the Grok Bot chat. Or screenshot the page.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+        <button type="button" id="btn-copy" style="background:#111;color:#fff;border:0;padding:10px 14px;cursor:pointer;">Copy text for chat</button>
+        <button type="button" id="btn-dl2" style="background:#ffd666;color:#111;border:0;padding:10px 14px;cursor:pointer;font-weight:700;">Try download again</button>
+        <button type="button" id="btn-close-panel" style="background:#eee;border:0;padding:10px 14px;cursor:pointer;">Close</button>
+      </div>
+      <textarea id="save-text" style="width:100%;height:280px;font-family:monospace;font-size:12px;"></textarea>
+      <p id="copy-status" style="font-size:0.85rem;color:green;min-height:1.2em;"></p>
+    </div>
+  </div>
+
+  <p class="footer-note">
+    Positions + text are saved in this browser and in the download file.
+    Live site won’t change until Grok Bot applies your guide.
+  </p>
+
+<script>
+(function () {
+  const STORE = "ad-edit-guide-v2";
+
+  function pct(n) { return Math.round(n * 1000) / 10 + "%"; }
+
+  function snapshot() {
+    const fields = {};
+    document.querySelectorAll(".box").forEach((box) => {
+      const id = box.dataset.id;
+      const body = box.querySelector(".body");
+      fields[id] = {
+        html: body.innerHTML,
+        left: box.style.left,
+        top: box.style.top,
+        stage: box.parentElement.id,
+      };
+    });
+    return fields;
+  }
+
+  function persist() {
+    localStorage.setItem(STORE, JSON.stringify(snapshot()));
+  }
+
+  function restore() {
+    try {
+      const data = JSON.parse(localStorage.getItem(STORE) || "null");
+      if (!data) return;
+      Object.entries(data).forEach(([id, v]) => {
+        const box = document.querySelector('.box[data-id="' + id + '"]');
+        if (!box) return;
+        if (v.left) box.style.left = v.left;
+        if (v.top) box.style.top = v.top;
+        if (v.html != null) box.querySelector(".body").innerHTML = v.html;
+      });
+    } catch (e) {}
+  }
+
+  // Dragging
+  let drag = null;
+  document.querySelectorAll(".box").forEach((box) => {
+    const handle = box.querySelector(".handle");
+    handle.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      box.classList.add("selected");
+      const stage = box.parentElement;
+      const sr = stage.getBoundingClientRect();
+      const br = box.getBoundingClientRect();
+      drag = {
+        box,
+        stage,
+        ox: e.clientX - br.left,
+        oy: e.clientY - br.top,
+        sw: sr.width,
+        sh: sr.height,
+        sl: sr.left,
+        st: sr.top,
+      };
+      handle.setPointerCapture(e.pointerId);
+    });
+    handle.addEventListener("pointermove", (e) => {
+      if (!drag || drag.box !== box) return;
+      let x = e.clientX - drag.sl - drag.ox;
+      let y = e.clientY - drag.st - drag.oy;
+      x = Math.max(0, Math.min(x, drag.sw - box.offsetWidth));
+      y = Math.max(0, Math.min(y, drag.sh - box.offsetHeight));
+      box.style.left = pct(x / drag.sw);
+      box.style.top = pct(y / drag.sh);
+    });
+    handle.addEventListener("pointerup", () => {
+      if (drag && drag.box === box) {
+        persist();
+        drag = null;
+      }
+    });
+    box.querySelector(".body").addEventListener("input", persist);
+    box.addEventListener("pointerdown", () => {
+      document.querySelectorAll(".box").forEach((b) => b.classList.remove("selected"));
+      box.classList.add("selected");
+    });
+  });
+
+  function buildPayload() {
+    persist();
+    return {
+      savedAt: new Date().toISOString(),
+      note: "Alexandra edit guide v2 — text + positions. Apply to live portfolio.",
+      fields: snapshot(),
+    };
+  }
+
+  function plainSummary(fields) {
+    let lines = ["EDIT GUIDE SUMMARY", "Please match the live site to these edits:", ""];
+    Object.entries(fields).forEach(([id, v]) => {
+      const text = (v.html || "").replace(/<br\s*\/?>/gi, " / ").replace(/<[^>]+>/g, "").trim();
+      lines.push(id + " @ " + (v.left || "?") + ", " + (v.top || "?"));
+      lines.push("  " + text);
+      lines.push("");
+    });
+    return lines.join("\n");
+  }
+
+  function openSavePanel() {
+    const payload = buildPayload();
+    const summary = plainSummary(payload.fields);
+    const full = summary + "\n\n--- JSON ---\n" + JSON.stringify(payload, null, 2);
+    const panel = document.getElementById("save-panel");
+    const ta = document.getElementById("save-text");
+    ta.value = full;
+    panel.style.display = "flex";
+    panel.hidden = false;
+    // try download quietly
+    tryDownload(payload);
+  }
+
+  function tryDownload(payload) {
+    try {
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "alexandra-edit-guide.json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    } catch (e) {}
+  }
+
+  document.getElementById("btn-save").onclick = openSavePanel;
+  document.getElementById("btn-dl2").onclick = () => tryDownload(buildPayload());
+  document.getElementById("btn-close-panel").onclick = () => {
+    const panel = document.getElementById("save-panel");
+    panel.style.display = "none";
+    panel.hidden = true;
+  };
+  document.getElementById("btn-copy").onclick = async () => {
+    const ta = document.getElementById("save-text");
+    const status = document.getElementById("copy-status");
+    try {
+      await navigator.clipboard.writeText(ta.value);
+      status.textContent = "Copied! Paste into the Grok Bot chat.";
+    } catch (e) {
+      ta.focus();
+      ta.select();
+      status.textContent = "Select the text (Cmd-A) and copy (Cmd-C), then paste in chat.";
+    }
+  };
+
+  document.getElementById("btn-reset").onclick = () => {
+    if (!confirm("Reset all positions and text?")) return;
+    localStorage.removeItem(STORE);
+    location.reload();
+  };
+
+  restore();
+})();
+</script>
+</body>
+</html>
