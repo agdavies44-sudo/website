@@ -23,7 +23,7 @@
     {
       "id": "social-focaccia",
       "brand": "5DB Media",
-      "title": "5DB Canteen \u2014 Focaccia",
+      "title": "5DB Canteen — Focaccia",
       "kind": "image",
       "url": "#",
       "poster": "/media/social/focaccia.jpg",
@@ -70,19 +70,19 @@
       "aspect": "portrait"
     },
     {
-      "id": "ig-DakQSTJI3lm",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Instagram",
-      "kind": "instagram",
-      "url": "https://www.instagram.com/reel/DakQSTJI3lm/",
+      "id": "vimeo-1229957379",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Instagram",
+      "kind": "vimeo",
+      "url": "https://vimeo.com/1229957379",
+      "vimeoId": "1229957379",
       "poster": "/media/social/ig/DakQSTJI3lm.jpg",
-      "videoSrc": "/media/social/ig/DakQSTJI3lm.mp4",
       "aspect": "portrait"
     },
     {
       "id": "vimeo-1229946527",
       "brand": "Liquid Opulence",
-      "title": "Liquid Opulence \u2014 Three Reasons",
+      "title": "Liquid Opulence — Three Reasons",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229946527",
       "vimeoId": "1229946527",
@@ -92,7 +92,7 @@
     {
       "id": "vimeo-1229946561",
       "brand": "Look Optic",
-      "title": "Look Optic \u2014 Model film",
+      "title": "Look Optic — Model film",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229946561",
       "vimeoId": "1229946561",
@@ -102,7 +102,7 @@
     {
       "id": "social-bread",
       "brand": "5DB Media",
-      "title": "5DB Canteen \u2014 Bread teaser",
+      "title": "5DB Canteen — Bread teaser",
       "kind": "image",
       "url": "#",
       "poster": "/media/social/bread-teaser.jpg",
@@ -111,7 +111,7 @@
     {
       "id": "vimeo-1229955617",
       "brand": "Buy Association",
-      "title": "Buy Association \u2014 Fountain Court",
+      "title": "Buy Association — Fountain Court",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229955617",
       "vimeoId": "1229955617",
@@ -121,7 +121,7 @@
     {
       "id": "vimeo-1229964585",
       "brand": "Creative Image",
-      "title": "Creative Image Productions \u2014 Wedding edit",
+      "title": "Creative Image Productions — Wedding edit",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229964585",
       "vimeoId": "1229964585",
@@ -139,39 +139,39 @@
       "aspect": "portrait"
     },
     {
-      "id": "ig-Dbu-vcZs6Jv",
+      "id": "vimeo-1229957380",
       "brand": "Borough Market",
       "title": "Borough Market reel 2",
-      "kind": "instagram",
-      "url": "https://www.instagram.com/reel/Dbu-vcZs6Jv/",
+      "kind": "vimeo",
+      "url": "https://vimeo.com/1229957380",
+      "vimeoId": "1229957380",
       "poster": "/media/social/ig/Dbu-vcZs6Jv.jpg",
-      "videoSrc": "/media/social/ig/Dbu-vcZs6Jv.mp4",
       "aspect": "portrait"
     },
     {
-      "id": "ig-C0epaNJtyk2",
+      "id": "vimeo-1229962093",
       "brand": "5DB Media",
       "title": "5DB Media",
-      "kind": "instagram",
-      "url": "https://www.instagram.com/p/C0epaNJtyk2/",
+      "kind": "vimeo",
+      "url": "https://vimeo.com/1229962093",
+      "vimeoId": "1229962093",
       "poster": "/media/social/ig/C0epaNJtyk2.jpg",
-      "videoSrc": "/media/social/ig/C0epaNJtyk2.mp4",
       "aspect": "portrait"
     },
     {
-      "id": "ig-DbsZUhGMngR",
+      "id": "vimeo-1229957416",
       "brand": "Borough Market",
       "title": "Borough Market reel 3",
-      "kind": "instagram",
-      "url": "https://www.instagram.com/reel/DbsZUhGMngR/",
+      "kind": "vimeo",
+      "url": "https://vimeo.com/1229957416",
+      "vimeoId": "1229957416",
       "poster": "/media/social/ig/DbsZUhGMngR.jpg",
-      "videoSrc": "/media/social/ig/DbsZUhGMngR.mp4",
       "aspect": "portrait"
     },
     {
       "id": "vimeo-1229946526",
       "brand": "Look Optic",
-      "title": "Look Optic \u2014 Creator edit two",
+      "title": "Look Optic — Creator edit two",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229946526",
       "vimeoId": "1229946526",
@@ -179,13 +179,13 @@
       "aspect": "portrait"
     },
     {
-      "id": "ig-Db73O9yK4Rx",
+      "id": "vimeo-1229957352",
       "brand": "Borough Market",
       "title": "Borough Market reel",
-      "kind": "instagram",
-      "url": "https://www.instagram.com/reel/Db73O9yK4Rx/",
+      "kind": "vimeo",
+      "url": "https://vimeo.com/1229957352",
+      "vimeoId": "1229957352",
       "poster": "/media/social/ig/Db73O9yK4Rx.jpg",
-      "videoSrc": "/media/social/ig/Db73O9yK4Rx.mp4",
       "aspect": "portrait"
     },
     {
@@ -201,7 +201,7 @@
     {
       "id": "vimeo-1229946528",
       "brand": "Look Optic",
-      "title": "Look Optic \u2014 Creator edit",
+      "title": "Look Optic — Creator edit",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229946528",
       "vimeoId": "1229946528",
@@ -211,7 +211,7 @@
     {
       "id": "vimeo-1229957349",
       "brand": "5DB Media",
-      "title": "5DB \u2014 Gig round-up",
+      "title": "5DB — Gig round-up",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229957349",
       "vimeoId": "1229957349",
@@ -221,7 +221,7 @@
     {
       "id": "vimeo-1229950820",
       "brand": "5DB Media",
-      "title": "5DB \u2014 Band performance teaser",
+      "title": "5DB — Band performance teaser",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229950820",
       "vimeoId": "1229950820",
@@ -231,7 +231,7 @@
     {
       "id": "vimeo-1229955616",
       "brand": "5DB Media",
-      "title": "5DB \u2014 Band on Tour",
+      "title": "5DB — Band on Tour",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229955616",
       "vimeoId": "1229955616",
@@ -241,7 +241,7 @@
     {
       "id": "vimeo-1229957351",
       "brand": "5DB Media",
-      "title": "5DB \u2014 Meet the team",
+      "title": "5DB — Meet the team",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229957351",
       "vimeoId": "1229957351",
@@ -251,7 +251,7 @@
     {
       "id": "vimeo-1229957350",
       "brand": "5DB Media",
-      "title": "5DB \u2014 Interview cutdown",
+      "title": "5DB — Interview cutdown",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229957350",
       "vimeoId": "1229957350",
@@ -272,7 +272,7 @@
     {
       "id": "vimeo-1229963580",
       "brand": "Rothmore",
-      "title": "Rothmore \u2014 Tobacco Warehouse",
+      "title": "Rothmore — Tobacco Warehouse",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229963580",
       "vimeoId": "1229963580",
@@ -281,8 +281,8 @@
     },
     {
       "id": "yt-qvnz76sRMrA",
-      "brand": "Stanley\u2019s Stick",
-      "title": "Stanley\u2019s Stick \u2014 Portfolio Excerpt",
+      "brand": "Stanley’s Stick",
+      "title": "Stanley’s Stick — Portfolio Excerpt",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=qvnz76sRMrA",
       "youtubeId": "qvnz76sRMrA",
@@ -302,7 +302,7 @@
     {
       "id": "vimeo-1229962712",
       "brand": "Core Productions",
-      "title": "Core Productions \u2014 Partnership highlight",
+      "title": "Core Productions — Partnership highlight",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229962712",
       "vimeoId": "1229962712",
@@ -312,7 +312,7 @@
     {
       "id": "vimeo-1229964583",
       "brand": "Buy Association",
-      "title": "Buy Association \u2014 Property Ad",
+      "title": "Buy Association — Property Ad",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229964583",
       "vimeoId": "1229964583",
@@ -331,7 +331,7 @@
     {
       "id": "vimeo-1229966792",
       "brand": "PensionBee",
-      "title": "PensionBee \u2014 Sarah\u2019s Story",
+      "title": "PensionBee — Sarah’s Story",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229966792",
       "vimeoId": "1229966792",
@@ -341,7 +341,7 @@
     {
       "id": "vimeo-1229966795",
       "brand": "PensionBee",
-      "title": "PensionBee \u2014 Becca\u2019s Story",
+      "title": "PensionBee — Becca’s Story",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229966795",
       "vimeoId": "1229966795",
@@ -351,7 +351,7 @@
     {
       "id": "vimeo-1229966791",
       "brand": "Core Productions",
-      "title": "Core Productions \u2014 Founders pitching investors",
+      "title": "Core Productions — Founders pitching investors",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229966791",
       "vimeoId": "1229966791",
@@ -361,7 +361,7 @@
     {
       "id": "vimeo-1229964584",
       "brand": "PensionBee",
-      "title": "PensionBee \u2014 James\u2019s Story",
+      "title": "PensionBee — James’s Story",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229964584",
       "vimeoId": "1229964584",
@@ -380,7 +380,7 @@
     {
       "id": "vimeo-1229961835",
       "brand": "5DB Media",
-      "title": "5DB \u2014 Full interview",
+      "title": "5DB — Full interview",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229961835",
       "vimeoId": "1229961835",
@@ -390,7 +390,7 @@
     {
       "id": "vimeo-1229955614",
       "brand": "5DB Media",
-      "title": "5DB \u2014 Artists in Residence band intro",
+      "title": "5DB — Artists in Residence band intro",
       "kind": "vimeo",
       "url": "https://vimeo.com/1229955614",
       "vimeoId": "1229955614",
@@ -401,8 +401,8 @@
   "podcasts": [
     {
       "id": "yt-iorwk_22ync",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Us",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Us",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=iorwk_22ync",
       "youtubeId": "iorwk_22ync",
@@ -412,7 +412,7 @@
     {
       "id": "pod-eitik",
       "brand": "Everything I Thought I Knew",
-      "title": "Everything I Thought I Knew \u2014 Episode 1",
+      "title": "Everything I Thought I Knew — Episode 1",
       "kind": "image",
       "url": "#",
       "poster": "/media/podcasts/everything-i-thought-i-knew-episode-1.jpg",
@@ -420,8 +420,8 @@
     },
     {
       "id": "yt-1WHRf51uFrA",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Ballin\u2019 Jacks",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Ballin’ Jacks",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=1WHRf51uFrA",
       "youtubeId": "1WHRf51uFrA",
@@ -430,8 +430,8 @@
     },
     {
       "id": "yt-9Khabl3tBVM",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Stepbrother",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Stepbrother",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=9Khabl3tBVM",
       "youtubeId": "9Khabl3tBVM",
@@ -442,8 +442,8 @@
   "lives": [
     {
       "id": "yt-NZIhqhNe-5k",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Mohan Evans",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Mohan Evans",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=NZIhqhNe-5k",
       "youtubeId": "NZIhqhNe-5k",
@@ -452,8 +452,8 @@
     },
     {
       "id": "yt-AsMuHbMUARE",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Ren Harvieu",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Ren Harvieu",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=AsMuHbMUARE",
       "youtubeId": "AsMuHbMUARE",
@@ -462,8 +462,8 @@
     },
     {
       "id": "yt-iwnXJ4laxXs",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Raquel Martins",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Raquel Martins",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=iwnXJ4laxXs",
       "youtubeId": "iwnXJ4laxXs",
@@ -472,8 +472,8 @@
     },
     {
       "id": "yt-5inJCJizU-c",
-      "brand": "Lunch With\u2026",
-      "title": "Lunch With\u2026 Poppy Daniels",
+      "brand": "Lunch With…",
+      "title": "Lunch With… Poppy Daniels",
       "kind": "youtube",
       "url": "https://www.youtube.com/watch?v=5inJCJizU-c",
       "youtubeId": "5inJCJizU-c",
