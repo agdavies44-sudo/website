@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prebuild": "mkdir -p public/content && cp src/data/work.json public/content/work.json"
   },
   "dependencies": {
     "next": "16.3.5",

@@ -2,25 +2,33 @@
 
 Goal: let Alexandra change titles, Vimeo IDs, and carousel order without touching React/TypeScript, then hand a small JSON download to the assistant for a safe apply.
 
-## Inspiration
+## Live editor
 
-`public/edit-guide.html` is a drag-and-type layout mock (hero/copy boxes). The real `/edit` page should be lighter: structured lists per section, not free-form absolute positioning.
+- URL: `/edit` (passphrase `davies-edit`, light client-side gate only).
+- Source of truth: `src/data/work.json` (imported by `src/data/projects.ts`).
+- Mirror for static serving: `public/content/work.json` (copied on `npm run build` via `prebuild`).
+- Flow: edit → **Download JSON** → send file to Grok Bot in chat → assistant merges into `src/data/work.json`, rebuilds, deploys.
+- The browser never writes to GitHub.
 
-## Approach (next phase — do not build fully yet)
+## Item shape
 
-1. **Content file** — move carousel data out of `src/data/projects.ts` into something like `public/content/work.json` (or `src/data/work.json` imported at build time). Shape per item: `{ id, brand, title, kind, vimeoId?, youtubeId?, poster?, aspect, order }`. Sections: `social`, `corporate`, `podcasts`, `lives`.
+```json
+{
+  "id": "vimeo-1229936390",
+  "brand": "Missoni",
+  "title": "Moonstone Interiors by Missoni",
+  "kind": "vimeo",
+  "vimeoId": "1229936390",
+  "youtubeId": null,
+  "videoSrc": null,
+  "poster": "/media/social/missoni.jpg",
+  "aspect": "portrait",
+  "url": "https://vimeo.com/1229936390"
+}
+```
 
-2. **`/edit` page** (client-only, no auth beyond a shared passphrase or “local only” warning):
-   - List each section’s items with reorder (↑/↓ or drag).
-   - Editable fields: title, brand, Vimeo ID (preferred), optional YouTube ID / poster URL.
-   - Add / remove row with sensible defaults (`kind: "vimeo"`, landscape/portrait from section).
-   - **Download JSON** button → `alexandra-work-YYYY-MM-DD.json` for email/chat to the assistant.
-   - Optional: “Copy JSON” for paste.
+Sections: `social`, `corporate`, `podcasts`, `lives`.
 
-3. **Apply path** — assistant (or a small `scripts/apply-work-json.mjs`) validates IDs, merges into the content file, rebuilds. No live write to production from the browser.
+## Out of scope for v1
 
-4. **Out of scope for v1** — uploading video files, DNS, GoDaddy, or editing photography/hero copy (those can reuse the edit-guide drag mock later).
-
-## Placeholder note
-
-Until `/edit` exists, change titles / Vimeo IDs in `src/data/projects.ts` (helpers `vim()`, `yt()`, `ig()`, `local()`), then `npm run build`.
+Uploading video files, DNS, GoDaddy, or editing photography/hero copy.

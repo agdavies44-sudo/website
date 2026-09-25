@@ -29,7 +29,10 @@ export default function HomePage() {
           Alexandra Davies
         </a>
         <span className="hidden sm:inline">From idea to final cut</span>
-        <span>© 2026</span>
+        <span className="flex items-center gap-3">
+          <a href="/edit" className="opacity-40 hover:opacity-80" title="Content editor">Edit</a>
+          <span>© 2026</span>
+        </span>
       </footer>
     </>
   );
