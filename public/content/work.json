@@ -253,14 +253,14 @@
       "aspect": "landscape"
     },
     {
-      "id": "yt-qvnz76sRMrA",
+      "id": "video-stanleys-stick",
       "brand": "Stanley’s Stick",
       "title": "Stanley’s Stick — Portfolio Excerpt",
-      "kind": "youtube",
-      "url": "https://www.youtube.com/watch?v=qvnz76sRMrA",
-      "youtubeId": "qvnz76sRMrA",
+      "kind": "video",
+      "url": "/media/corporate/stanleys-stick.mp4",
       "poster": "/media/corporate/stanleys-stick-preview.jpg",
-      "aspect": "landscape"
+      "aspect": "landscape",
+      "videoSrc": "/media/corporate/stanleys-stick.mp4"
     },
     {
       "id": "vimeo-1229964586",

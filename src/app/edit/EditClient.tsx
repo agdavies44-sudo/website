@@ -361,6 +361,7 @@ export function EditClient() {
                     <option value="instagram">instagram</option>
                     <option value="image">image</option>
                     <option value="external">external</option>
+                    <option value="video">video</option>
                   </select>
                 </label>
                 <label className="block text-xs text-muted">

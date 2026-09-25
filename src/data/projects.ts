@@ -1,7 +1,7 @@
 import { asset } from "@/lib/asset";
 import workData from "./work.json";
 
-export type MediaKind = "youtube" | "vimeo" | "instagram" | "image" | "external";
+export type MediaKind = "youtube" | "vimeo" | "instagram" | "image" | "external" | "video";
 
 export type WorkItem = {
   id: string;
