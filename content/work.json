@@ -21,15 +21,6 @@
       "aspect": "portrait"
     },
     {
-      "id": "social-focaccia",
-      "brand": "5DB Media",
-      "title": "5DB Canteen — Focaccia",
-      "kind": "image",
-      "url": "#",
-      "poster": "/media/social/focaccia.jpg",
-      "aspect": "portrait"
-    },
-    {
       "id": "vimeo-1229936390",
       "brand": "Missoni",
       "title": "Moonstone Interiors by Missoni",
@@ -97,15 +88,6 @@
       "url": "https://vimeo.com/1229946561",
       "vimeoId": "1229946561",
       "poster": "https://vumbnail.com/1229946561.jpg",
-      "aspect": "portrait"
-    },
-    {
-      "id": "social-bread",
-      "brand": "5DB Media",
-      "title": "5DB Canteen — Bread teaser",
-      "kind": "image",
-      "url": "#",
-      "poster": "/media/social/bread-teaser.jpg",
       "aspect": "portrait"
     },
     {
@@ -261,15 +243,6 @@
   ],
   "corporate": [
     {
-      "id": "corp-monta",
-      "brand": "Monta Capital",
-      "title": "Monta Capital",
-      "kind": "image",
-      "url": "#",
-      "poster": "/media/corporate/monta-capital.jpg",
-      "aspect": "landscape"
-    },
-    {
       "id": "vimeo-1229963580",
       "brand": "Rothmore",
       "title": "Rothmore — Tobacco Warehouse",
@@ -320,15 +293,6 @@
       "aspect": "landscape"
     },
     {
-      "id": "corp-one",
-      "brand": "The One Residence",
-      "title": "The One Residence",
-      "kind": "image",
-      "url": "#",
-      "poster": "/media/corporate/the-one-residence.jpg",
-      "aspect": "landscape"
-    },
-    {
       "id": "vimeo-1229966792",
       "brand": "PensionBee",
       "title": "PensionBee — Sarah’s Story",
@@ -369,15 +333,6 @@
       "aspect": "landscape"
     },
     {
-      "id": "corp-honor",
-      "brand": "Honor Oak",
-      "title": "Honor Oak",
-      "kind": "image",
-      "url": "#",
-      "poster": "/media/corporate/honor-oak.jpg",
-      "aspect": "landscape"
-    },
-    {
       "id": "vimeo-1229961835",
       "brand": "5DB Media",
       "title": "5DB — Full interview",
@@ -407,15 +362,6 @@
       "url": "https://www.youtube.com/watch?v=iorwk_22ync",
       "youtubeId": "iorwk_22ync",
       "poster": "https://i.ytimg.com/vi/iorwk_22ync/hqdefault.jpg",
-      "aspect": "landscape"
-    },
-    {
-      "id": "pod-eitik",
-      "brand": "Everything I Thought I Knew",
-      "title": "Everything I Thought I Knew — Episode 1",
-      "kind": "image",
-      "url": "#",
-      "poster": "/media/podcasts/everything-i-thought-i-knew-episode-1.jpg",
       "aspect": "landscape"
     },
     {
