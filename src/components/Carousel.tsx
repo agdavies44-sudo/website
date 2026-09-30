@@ -48,7 +48,7 @@ export default function Carousel({ heading, label, children, className }: Props)
         ref={trackRef}
         tabIndex={0}
         aria-label={label}
-        className="carousel-track flex gap-[clamp(10px,1.2vw,18px)] overflow-x-auto overflow-y-hidden px-[2px] pb-[13px] snap-x snap-proximity"
+        className="carousel-track flex items-start gap-[clamp(10px,1.2vw,18px)] overflow-x-auto overflow-y-hidden px-[2px] pb-[13px] snap-x snap-proximity"
       >
         {children}
       </div>

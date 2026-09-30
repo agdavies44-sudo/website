@@ -1,22 +1,19 @@
 "use client";
 
 import type { WorkItem } from "@/data/projects";
+import { vimeoEmbedSrc, youtubeEmbedSrc } from "@/lib/embeds";
 
 type Props = {
   item: WorkItem;
   onClose: () => void;
 };
 
-function vimeoEmbedSrc(id: string) {
-  return `https://player.vimeo.com/video/${id}?autoplay=1&muted=1&title=0&byline=0&portrait=0&playsinline=1`;
-}
-
 export default function MediaViewer({ item, onClose }: Props) {
   const portrait = item.aspect === "portrait";
 
   const frameClass = portrait
     ? "relative aspect-[9/16] h-auto max-h-[76vh] w-[min(430px,78vw)] overflow-hidden bg-black"
-    : "relative aspect-video h-auto max-h-[76vh] w-[min(88vw,1240px)] overflow-hidden bg-black";
+    : "relative aspect-[16/9] h-auto max-h-[76vh] w-[min(88vw,1240px)] overflow-hidden bg-black";
 
   return (
     <div
@@ -35,6 +32,7 @@ export default function MediaViewer({ item, onClose }: Props) {
       </button>
 
       <div className="grid flex-1 place-items-center">
+        {/* Prefer native HTML5 when a local MP4 exists — no host branding. */}
         {item.videoSrc ? (
           <video
             src={item.videoSrc}
@@ -65,7 +63,7 @@ export default function MediaViewer({ item, onClose }: Props) {
         ) : item.kind === "youtube" && item.youtubeId ? (
           <div className={frameClass}>
             <iframe
-              src={`https://www.youtube-nocookie.com/embed/${item.youtubeId}?autoplay=1&mute=1&rel=0&modestbranding=1&iv_load_policy=3&playsinline=1&fs=1&disablekb=0&controls=1`}
+              src={youtubeEmbedSrc(item.youtubeId)}
               title={item.title}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen

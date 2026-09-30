@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { photography } from "@/data/photography";
+import { asset } from "@/lib/asset";
 
 export default function Photography() {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -24,7 +25,7 @@ export default function Photography() {
             Photography
           </h2>
           <p className="mt-1 text-[0.74rem] uppercase tracking-[0.12em] text-muted">
-            People · Place · Story
+            Travel · Event · Candid
           </p>
         </div>
         <div className="flex gap-[7px]">
@@ -55,7 +56,8 @@ export default function Photography() {
           <button
             key={photo.src}
             type="button"
-            onClick={() => setLightbox(photo.src)}
+            onClick={() => setLightbox(asset(photo.src))}
+            title={photo.category.charAt(0).toUpperCase() + photo.category.slice(1)}
             className={`photo relative h-[clamp(310px,36vw,540px)] shrink-0 snap-start overflow-hidden bg-[#deded9] cursor-zoom-in max-[700px]:h-[min(108vw,470px)] ${
               photo.variant === "wide"
                 ? "basis-[clamp(430px,48vw,760px)] max-[700px]:basis-[88vw]"
@@ -66,7 +68,7 @@ export default function Photography() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={photo.src}
+              src={asset(photo.src)}
               alt={photo.alt}
               className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.025] hover:brightness-90"
               loading="lazy"

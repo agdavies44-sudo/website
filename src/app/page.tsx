@@ -1,4 +1,3 @@
-import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import Photography from "@/components/Photography";
@@ -22,7 +21,6 @@ export default function HomePage() {
         <WorkSection />
         <Photography />
         <SocialLinks />
-        <Contact />
       </main>
       <footer className="flex flex-wrap items-center justify-between gap-4 bg-ink px-[2.35%] py-[18px] text-[0.76rem] text-[#a5a5a1]">
         <a href="#main" className="text-white hover:opacity-80">
