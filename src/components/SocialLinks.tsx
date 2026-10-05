@@ -3,13 +3,12 @@ import { site } from "@/data/site";
 const links = [
   { label: "Instagram", href: site.social.instagram },
   { label: "LinkedIn", href: site.social.linkedin },
-  { label: "YouTube", href: site.social.youtube },
 ] as const;
 
 export default function SocialLinks() {
   return (
     <div className="bg-white px-[2.35%] pb-[clamp(38px,5vw,72px)]">
-      <div className="grid grid-cols-1 border-y border-line sm:grid-cols-3">
+      <div className="grid grid-cols-1 border-y border-line sm:grid-cols-2">
         {links.map((link, i) => (
           <a
             key={link.label}

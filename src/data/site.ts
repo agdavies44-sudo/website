@@ -18,6 +18,5 @@ export const site = {
   social: {
     instagram: "https://www.instagram.com/agdavies/",
     linkedin: "https://www.linkedin.com/in/alexandra-davies-a19201a4/",
-    youtube: "https://www.youtube.com/@davies.alexandra",
   },
 } as const;
