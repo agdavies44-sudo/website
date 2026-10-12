@@ -27,7 +27,7 @@ export default function SiteHeader() {
       }`}
     >
       <a
-        href="#main"
+        href="/"
         className="wordmark text-[clamp(1.55rem,2.8vw,2.65rem)]"
         aria-label="Alexandra Davies, home"
       >
@@ -52,7 +52,7 @@ export default function SiteHeader() {
           Email
         </button>
         <a
-          href="#work"
+          href="/#work"
           className="border-b border-transparent py-[10px] pb-[7px] uppercase tracking-[0.12em] hover:border-current"
         >
           Work

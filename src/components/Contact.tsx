@@ -6,7 +6,7 @@ export default function Contact() {
   const { openEmail, openPhone } = useModals();
 
   return (
-    <section className="bg-ink px-[2.35%] pb-8 pt-[clamp(52px,8vw,118px)] text-white">
+    <section id="contact" className="min-h-screen bg-ink px-[2.35%] pb-8 pt-[clamp(52px,8vw,118px)] text-white">
       <p className="text-[0.74rem] uppercase tracking-[0.12em] text-[#a5a5a1]">
         Have a brief, a launch or the start of an idea?
       </p>
